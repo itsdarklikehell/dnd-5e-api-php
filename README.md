@@ -68,3 +68,11 @@ If you discover any security related issues, please use the issue tracker.
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+---
+
+## 🎥 Gource Visualization
+
+De ontwikkelhistorie van dit project in een film:
+
+<video src="https://raw.githubusercontent.com/itsdarklikehell/dnd-5e-api-php/master/gource.mp4" controls width="100%"></video>
