@@ -71,8 +71,30 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 ---
 
+## 🛠️ Technologische Stack
+
+- **PHP 8.5+** — PSR-17 HTTP client, Guzzle
+- **Composer** — afhankelijkheidsbeheer
+- **PHPUnit** — unit tests (8 test suites: AbilityScores, Classes, Languages, Proficiencies, Skills, SubClasses, Model)
+- **DND5eAPI.co** — externe API voor D&D 5e gegevens
+
 ## 🎥 Gource Visualization
 
 De ontwikkelhistorie van dit project in een film:
 
 <video src="https://raw.githubusercontent.com/itsdarklikehell/dnd-5e-api-php/master/gource.mp4" controls width="100%"></video>
+
+*De video wordt automatisch gegenereerd door de [Gource workflow](.github/workflows/gource.yml) bij elke push — rendered via [nbprojekt/gource-action@v1.3.0](https://github.com/marketplace/actions/gource-action) in 1080p.*
+
+Lokaal render (vereist Gource + ffmpeg):
+
+```bash
+gource --max-files 1500 --key -1920x1080 \
+  --highlight-users --filename-time 3 --output-framerate 30 \
+  --stop-at-end --auto-skip-seconds 0.1 --multi-sampling \
+  --seconds-per-day 0.4 -o gource.ppm
+
+ffmpeg -y -r 30 -f image2pipe -vcodec ppm -i gource.ppm \
+  -c:v libx264 -preset medium -pix_fmt yuv420p \
+  -c:a aac -b:a 192k gource.mp4
+```
